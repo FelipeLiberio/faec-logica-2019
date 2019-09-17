@@ -30,10 +30,10 @@ public class ManipuladorArquivo{
 		writer.println("Segunda Linha");
 		
 		//Escrever numero de 0 a 100 no arquivo numeros.txt. Um numero em cada linha
-		PrintWriter num = new PrintWriter(new File("Numeros.txt"));
+		//PrintWriter num = new PrintWriter(new File("Numeros.txt"));
 		for(int i = 0; i <100; i++){
-			String j = Integer.(i);
-			num.println(j);
+			
+			writer.println(Integer.toString(i));
 		}
 		
 		//Fechar arquivo
