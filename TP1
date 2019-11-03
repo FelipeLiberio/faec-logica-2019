@@ -1,0 +1,59 @@
+package trabalho1;
+import java.util.Arrays;
+import java.util.Scanner;
+/**
+ * @author Felipe
+ */
+public class Trabalho1 {
+    public static void main(String[] args) {
+        Scanner in = new Scanner (System.in);
+        //System.out.println("Digite o numero de Operadores");
+        int op = 2,n=0;
+        
+        String codM = "=.-..+...*:.";
+        char[]elementos = codM.toCharArray();
+        int []numeros = new int [elementos.length];
+        int []expressao = new int [op+3];
+        System.out.println("------------");
+        for(int i = 0; i<elementos.length;i++){
+            switch(elementos[i]){
+                case '.':
+                    numeros[i] = 1;
+                    break;
+                case ':':
+                    numeros[i] = 2;
+                    break;
+                case '-':
+                    numeros[i] = 5;
+                    break;
+                case'=':
+                    numeros[i] = 10;
+                    break;
+                case '+':
+                    numeros[i] = 1000;
+                    break;
+                case '*':
+                    numeros[i] = 100;
+                    break;
+            }
+            System.out.println(numeros[i]);
+        }
+        for(int i=0;i<numeros.length;i++){
+            if(numeros[i]==1000||numeros[i]==100){
+                expressao[++n]=numeros[i];
+                i++;
+                n+=1;
+            }
+            expressao[n]+=numeros[i]; 
+        }
+        System.out.println(Arrays.toString(expressao));
+        for(int i=0;i<expressao.length;i++){
+            int mult =0;
+            int res =0;
+            if(expressao[i]==100){
+                mult=expressao[i-i]*expressao[i+1];
+                
+            }
+        }
+    }
+}
