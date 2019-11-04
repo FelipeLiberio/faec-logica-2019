@@ -9,7 +9,7 @@ public class Trabalho1 {
         Scanner in = new Scanner (System.in);
         //System.out.println("Digite o numero de Operadores");
         int op = 2,n=0;
-        
+        int mult1=0, mult2=0, res=0;
         String codM = "=.-..+...*:.";
         char[]elementos = codM.toCharArray();
         int []numeros = new int [elementos.length];
@@ -48,12 +48,11 @@ public class Trabalho1 {
         }
         System.out.println(Arrays.toString(expressao));
         for(int i=0;i<expressao.length;i++){
-            int mult =0;
-            int res =0;
             if(expressao[i]==100){
-                mult=expressao[i-i]*expressao[i+1];
-                
+                mult1=expressao[i-1]*expressao[i+1]; 
             }
+            res = expressao[0]+mult1+mult2;
         }
+        System.out.println(res);
     }
 }
