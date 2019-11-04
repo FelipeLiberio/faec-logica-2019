@@ -1,0 +1,37 @@
+package br.edu.faec.tad;
+/**
+*
+* @author 55419
+*/
+public class Pilha {
+    Celula primeiro, topo;
+   
+    public Pilha(){
+        topo = new Celula();
+        primeiro = topo;
+        topo.proximo = null;
+    }
+    public boolean vazia(){
+        return topo == null;
+    }
+    public void empilhar(Object info){
+        topo.proximo = new Celula();
+        topo.proximo.item = info;
+        topo = topo.proximo;
+        topo.proximo = null;
+    }
+    public Object desempilhar(Object info){
+        
+    }
+    public Object pesquisa(Object info){
+        
+        return null;
+    }
+    public void imprimir(){
+        Celula aux = primeiro.proximo;
+        while(aux!= null){
+           System.out.println(aux.item.toString());
+           aux=aux.proximo;
+        }
+    }
+}
