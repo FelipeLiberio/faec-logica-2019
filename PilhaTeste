@@ -1,0 +1,18 @@
+package br.edu.faec.tad;
+/**
+*
+* @author 55419
+*/
+public class PilhaTeste {
+    public static void main(String[] args) {
+        Pilha pilhaLivros = new Pilha();
+        pilhaLivros.vazia();
+        pilhaLivros.empilhar("O Senhor dos Anéis");
+        pilhaLivros.empilhar("O Hobbit");
+        pilhaLivros.empilhar("Beren e Luthien");
+        pilhaLivros.desempilhar("O Hobbit");
+        pilhaLivros.imprimir();
+        
+        
+    }
+}
