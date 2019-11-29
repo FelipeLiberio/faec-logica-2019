@@ -1,0 +1,46 @@
+package trabalho1;
+import java.util.Scanner;
+/**
+ *
+ * @author Felipe
+ */
+public class MatrizString {
+    public static void main(String[] args) {
+        Scanner tec = new Scanner(System.in);
+        
+        int tam = 3, linha=0,coluna=0;
+        String string = "**";
+        
+        String[][] matriz = new String [tam] [tam];
+        
+        for(int i=0;i<matriz.length;i++){
+            for(int j=0;j<matriz.length;j++){
+                matriz[i][j] = tec.next();
+            }
+        }
+        /**
+        System.out.println("____________");
+        for(int i=0;i<matriz.length;i++){
+            for(int j=0; j<matriz.length;j++){
+                System.out.print(String.format("Posição %d %d = %S ",i, j,matriz[i][j]));
+            }
+            System.out.println("");
+        }*/
+        
+        for(int i=0;i<matriz.length;i++){
+            for(int j=0;j<string.length();j++){
+                
+                for(int k = j; k < matriz.length; k++) {
+                    if(matriz[i][k].equals("*")) {
+                        linha++;
+                    }
+                }
+                
+                
+                
+            }
+        }
+        System.out.println(linha);    
+    }
+    
+}
