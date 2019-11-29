@@ -8,25 +8,29 @@ public class MatrizString {
     public static void main(String[] args) {
         Scanner tec = new Scanner(System.in);
         
-        int tam = 3, linha=0,coluna=0;
-        String string = "**";
+        int linha=0,coluna=0;
+        
+        System.out.println("Digite o tamanho da matriz(De 1 a 50): ");
+        int tam = tec.nextInt();
+        System.out.println("Digite a String: ");
+        String string = tec.next();
         
         String[][] matriz = new String [tam] [tam];
-        
+        System.out.println("Insira os dados da matriz (letras maiúsculas se acento e pelo simbolo *):");
         for(int i=0;i<matriz.length;i++){
             for(int j=0;j<matriz.length;j++){
                 matriz[i][j] = tec.next();
             }
         }
-        /**
-        System.out.println("____________");
+        System.out.println("------------------------");
+        System.out.println(string);
         for(int i=0;i<matriz.length;i++){
             for(int j=0; j<matriz.length;j++){
-                System.out.print(String.format("Posição %d %d = %S ",i, j,matriz[i][j]));
+                System.out.print(matriz[i][j]);
             }
             System.out.println("");
-        }*/
-        
+        }
+        System.out.println("-------------------------");
         for(int i=0;i<matriz.length;i++){
             for(int j=0;j<string.length();j++){
                 
@@ -35,12 +39,24 @@ public class MatrizString {
                         linha++;
                     }
                 }
-                
-                
-                
+                for(int k =j; k<matriz.length;k++){
+                    if(matriz[k][i].equals("*")){
+                        coluna++;
+                    }
+                }
+                if(string.length()==linha){
+                    System.out.println("Horizontal: linha "+i);
+                }else{
+                    linha=0;
+                }
+                if(string.length()==coluna){
+                    System.out.println("Vertical: coluna "+i);
+                }else{
+                    coluna=0;
+                }
             }
         }
-        System.out.println(linha);    
+            
     }
     
 }
