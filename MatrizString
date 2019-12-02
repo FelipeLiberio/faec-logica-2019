@@ -16,41 +16,45 @@ public class MatrizString {
         String string = tec.next();
         
         String[][] matriz = new String [tam] [tam];
-        System.out.println("Insira os dados da matriz (letras maiúsculas se acento e pelo simbolo *):");
-        for(int i=0;i<matriz.length;i++){
-            for(int j=0;j<matriz.length;j++){
-                matriz[i][j] = tec.next();
+        System.out.println("Insira os dados da matriz (letras maiúsculas sem acento e o simbolo *):");
+        for (String[] valor : matriz) {
+            for (int j = 0; j<matriz.length; j++) {
+                valor[j] = tec.next();
             }
         }
-        
         System.out.println("------------------------");
         System.out.println(string);
-        for(int i=0;i<matriz.length;i++){
-            for(int j=0; j<matriz.length;j++){
-                System.out.print(matriz[i][j]);
+        for (String[] valor : matriz) {
+            for (int j = 0; j<matriz.length; j++) {
+                System.out.print(valor[j]);
             }
             System.out.println("");
         }
         System.out.println("-------------------------");
         
         for(int i=0;i<matriz.length;i++){
-            for(int j=0;j<matriz.length;j++){
-                if(matriz[i][j].equals("*")){
-                    linha++;
-                    if(linha==string.length()){
-                        System.out.println("Horizontal: linha "+i);
+            for(int j=0;j<string.length();j++){
+                for(int l=j;l<matriz.length;l++){
+                    if(matriz[i][l].equals("*")){
+                        linha++; 
                     }
+                }
+                if(linha==string.length()){
+                    System.out.println("Horizontal: linha "+i);   
                 }else{
                     linha=0;
                 }
-                if(matriz[j][i].equals("*")){
-                    coluna++;
-                    if(coluna==string.length()){
-                        System.out.println("Vertical: coluna "+i);
+                for(int l=j;l<matriz.length;l++){
+                    if(matriz[l][i].equals("*")){
+                        coluna++; 
                     }
+                }
+                if(coluna==string.length()){
+                    System.out.println("Vertical: coluna "+i);   
                 }else{
                     coluna=0;
+                }
             }
-        }           
+        }
     } 
 }
