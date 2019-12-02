@@ -1,0 +1,60 @@
+package trabalho1;
+import java.util.Scanner;
+/**
+ *
+ * @author Felipe
+ */
+public class MatrizString {
+    public static void main(String[] args) {
+        Scanner tec = new Scanner(System.in);
+        
+        int linha=0,coluna=0;
+        
+        System.out.println("Digite o tamanho da matriz(De 1 a 50): ");
+        int tam = tec.nextInt();
+        System.out.println("Digite a String: ");
+        String string = tec.next();
+        
+        String[][] matriz = new String [tam] [tam];
+        System.out.println("Insira os dados da matriz (letras maiúsculas sem acento e o simbolo *):");
+        for (String[] valor : matriz) {
+            for (int j = 0; j<matriz.length; j++) {
+                valor[j] = tec.next();
+            }
+        }
+        System.out.println("------------------------");
+        System.out.println(string);
+        for (String[] valor : matriz) {
+            for (int j = 0; j<matriz.length; j++) {
+                System.out.print(valor[j]);
+            }
+            System.out.println("");
+        }
+        System.out.println("-------------------------");
+        
+        for(int i=0;i<matriz.length;i++){
+            for(int j=0;j<string.length();j++){
+                for(int l=j;l<matriz.length;l++){
+                    if(matriz[i][l].equals("*")){
+                        linha++; 
+                    }
+                }
+                if(linha==string.length()){
+                    System.out.println("Horizontal: linha "+i);   
+                }else{
+                    linha=0;
+                }
+                for(int l=j;l<matriz.length;l++){
+                    if(matriz[l][i].equals("*")){
+                        coluna++; 
+                    }
+                }
+                if(coluna==string.length()){
+                    System.out.println("Vertical: coluna "+i);   
+                }else{
+                    coluna=0;
+                }
+            }
+        }
+    } 
+}
