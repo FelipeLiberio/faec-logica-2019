@@ -32,30 +32,24 @@ public class MatrizString {
             System.out.println("");
         }
         System.out.println("-------------------------");
+        
         for(int i=0;i<matriz.length;i++){
-            for(int j=0;j<string.length();j++){
-                
-                for(int k = j; k < matriz.length; k++) {
-                    if(matriz[i][k].equals("*")) {
-                        linha++;
+            for(int j=0;j<matriz.length;j++){
+                if(matriz[i][j].equals("*")){
+                    linha++;
+                    if(linha==string.length()){
+                        System.out.println("Horizontal: linha "+i);
                     }
-                }
-                if(linha==string.length()){
-                    System.out.println("Horizontal: linha "+i);
                 }else{
                     linha=0;
                 }
-                
-                for(int k =j; k<matriz.length;k++){
-                    if(matriz[k][i].equals("*")){
-                        coluna++;
+                if(matriz[j][i].equals("*")){
+                    coluna++;
+                    if(coluna==string.length()){
+                        System.out.println("Vertical: coluna "+i);
                     }
-                }
-                if(coluna==string.length()){
-                    System.out.println("Vertical: coluna "+i);
                 }else{
                     coluna=0;
-                }
             }
         }           
     } 
