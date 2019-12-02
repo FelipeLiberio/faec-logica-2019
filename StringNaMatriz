@@ -4,7 +4,7 @@ import java.util.Scanner;
  *
  * @author Felipe
  */
-public class MatrizString {
+public class StringNaMatriz {
     public static void main(String[] args) {
         Scanner tec = new Scanner(System.in);
         
