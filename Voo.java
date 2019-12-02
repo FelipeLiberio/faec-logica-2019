@@ -42,4 +42,23 @@ public class Voo {
                     }
                 }
             }
-        })
+        });
+        
+        System.out.println("--------------------------------------------------");
+        System.out.println("Passageiros com 65 anos ou mais: ");    
+        veio.forEach((i) -> {
+            System.out.println(String.format("Nome:%s idade:%d",i.nome,i.idade));
+        });
+        System.out.println("--------------------------------------------------");
+        System.out.println("Passageiros menores de 18: ");
+        diMenor.forEach((i) -> {
+            System.out.println(String.format("Nome:%s idade:%d",i.nome,i.idade));
+        });
+        System.out.println("--------------------------------------------------");
+        System.out.println("Passageiros maior de 18 e menor de 65 anos:");
+        adult.forEach((i) -> {
+            System.out.println(String.format("Nome:%s idade:%d",i.nome,i.idade));
+        });
+        System.out.println("--------------------------------------------------");
+    }
+}
