@@ -16,13 +16,14 @@ public class Loja {
         for(int i=0;i<5;i++){
             produtos[i]=new Produto();
             produtos[i].id=i+1;
-            produtos[i].nome="Produto"+1;
+            produtos[i].nome="Pinga"+1;
             produtos[i].preco=i*2+1;
-            c.cliente="José"+1;
+            c.cliente="Cliente"+1;
             c.id=i+1;
             c.compras.add(produtos[i]);
         }
-        for(Produto i: c.compras)
-            System.out.println(String.format("Produto :%d %s %.2f",i.id,i.nome,i.preco));
+        c.compras.stream().forEach((i) -> {
+            System.out.println(String.format("Produto %d: %s %.2f",i.id,i.nome,i.preco));
+        });
     }
 }
