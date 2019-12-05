@@ -1,0 +1,35 @@
+package trabalho1;
+import java.util.Scanner;
+/**
+ *
+ * @author Felipe
+ */
+public class MatrizString {
+    public static void main(String[] args) {
+        Scanner tec = new Scanner(System.in);
+        String s ="**", temp="";
+        String matriz [][] = {{"A","*","*"},{"*","*","A"},{"A","Q","A"}};
+        for(int i=0; i<matriz.length;i++){
+            for(int j=0;j<matriz.length;j++){
+                System.out.print(matriz[i][j]);
+            }
+            System.out.println("");
+        }
+        for(int i=0;i<matriz.length;i++){
+            for(int j=0;j<matriz.length;j++){
+                if(matriz[i][j].equals("*")){
+                    temp+=matriz[i][j];
+                    if(temp.equals(s)){
+                        System.out.println("Horizontal: linha"+i);
+                        temp="";
+                    }
+                }else{
+                    temp="";
+                }
+            }
+            
+        }
+        
+            
+    } 
+}
