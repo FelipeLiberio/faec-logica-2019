@@ -7,29 +7,52 @@ import java.util.Scanner;
 public class MatrizString {
     public static void main(String[] args) {
         Scanner tec = new Scanner(System.in);
-        String s ="**", temp="";
-        String matriz [][] = {{"A","*","*"},{"*","*","A"},{"A","Q","A"}};
-        for(int i=0; i<matriz.length;i++){
-            for(int j=0;j<matriz.length;j++){
-                System.out.print(matriz[i][j]);
+        System.out.println("Digite o tamanho da matriz(menor que 50): ");
+        int n =tec.nextInt();
+        System.out.println("Digite a String: ");
+        String s =tec.next();
+        System.out.println("Insira os dados na matriz(Seguidos da tecla enter): ");
+        String [][] matriz = new String [n][n];
+        for (String[] valor : matriz) {
+            for (int j = 0; j<matriz.length; j++) {
+                valor[j] = tec.next();
             }
-            System.out.println("");
         }
+        System.out.println("-------------------");
+        for (String[] matriz1 : matriz) {
+            for (int j = 0; j<matriz.length; j++) {
+                System.out.print(matriz1[j]);
+            }
+                System.out.println("");
+        }
+        String  temp="";
+        System.out.println("-------------------");
+        System.out.println(s);
         for(int i=0;i<matriz.length;i++){
             for(int j=0;j<matriz.length;j++){
                 if(matriz[i][j].equals("*")){
                     temp+=matriz[i][j];
                     if(temp.equals(s)){
-                        System.out.println("Horizontal: linha"+i);
+                        System.out.println("Horizontal: linha "+i);
                         temp="";
                     }
                 }else{
                     temp="";
                 }
             }
-            
         }
-        
-            
+        for(int i=0;i<matriz.length;i++){
+            for(int j=0;j<matriz.length;j++){
+                if(matriz[j][i].equals("*")){
+                    temp+=matriz[i][j];
+                    if(temp.equals(s)){
+                        System.out.println("Vertical: coluna "+i);
+                        temp="";
+                    }
+                }else{
+                    temp="";
+                }
+            }
+        }    
     } 
 }
