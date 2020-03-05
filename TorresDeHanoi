@@ -1,0 +1,43 @@
+package torresdehanoi;
+
+import java.util.Scanner;
+import java.util.Stack;
+/**
+ *
+ * @author Felipe
+ */
+public class TorresDeHanoi {
+
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Scanner tec = new Scanner(System.in);
+        System.out.println("Digite o numero de Discos: ");
+        int n =tec.nextInt();
+        do{
+            int nD = n;
+            Stack<Integer> Torre1 = new Stack <>();
+            Stack<Integer> Torre2 = new Stack <>();
+            Stack<Integer> Torre3 = new Stack <>();
+            while(nD>0){   
+                Torre1.push(nD);
+                nD--;
+            }
+            torreDeHanoi(Torre1.size(), Torre1, Torre3, Torre2); 
+            System.out.println("Digite o numero de Discos: ");
+            n=tec.nextInt();
+            
+        }while(n>0);
+    }
+    public static void torreDeHanoi(int n, Stack<Integer> Torre1, Stack<Integer> Torre3, Stack<Integer> Torre2){
+	if (n > 0){
+            torreDeHanoi(n-1, Torre1, Torre2, Torre3);
+            Torre3.push(Torre1.pop());
+            System.out.println("-------------------");
+            System.out.println("Torre 1: " + Torre1);
+            System.out.println("Torre 2: " + Torre2);
+            System.out.println("Torre 3: " + Torre3);
+            System.out.println("-------------------");
+            torreDeHanoi(n-1, Torre2, Torre3, Torre1); 
+	}   
+    }   
+}
